@@ -9,4 +9,5 @@ for num in range(1,n):    # for 1 to n
         if(num%i==0):
             sum+=i           # adding the quotient sum 
         
-    if(sum==num): print(f"{sum} ")  # printing the perfect number 
+    if(sum==num):
+        print(f"{sum} ")  # printing the perfect number 
