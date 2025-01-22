@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 2</title>
+    <style>
+        table,
+        th,
+        td {
+            border: solid rgb(182, 178, 178);
+            border: spacing 0.1em;
+            text-align: center;
+        }
+
+        .yellow {
+            background-color: rgb(247, 247, 99);
+        }
+
+        .pink {
+            background-color: rgb(237, 175, 185);
+        }
+
+        .green {
+            background-color: rgb(56, 173, 56);
+        }
+    </style>
+</head>
+
+<body>
+
+    <table style="width: 100%;">
+        <tr>
+            <td rowspan="3">DAY</td>
+            <td colspan="3"> Seminar</td>
+        <tr>
+            <td colspan="2">Schedule</td>
+            <td rowspan="2"> Topic</td>
+        </tr>
+        <tr>
+            <td>Begin</td>
+            <td>end</td>
+        </tr>
+        </tr>
+        <tr>
+            <td rowspan="2">Monday</td>
+            <td rowspan="2" class="yellow">8:00am</td>
+            <td rowspan="2" class="pink">5:00am</td>
+            <td>INtroduction to XML</td>
+        <tr>
+            <td>Validity :DTD and Relax Ng</td>
+        </tr>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Tuesday</td>
+            <td class="yellow">8:00</td>
+            <td class="yellow">11:00</td>
+            <td rowspan="">Xpath</td>
+        <tr>
+            <td class="yellow">11:00</td>
+            <td class="green">2:00</td>
+            <td rowspan="2">Tranformations</td>
+        </tr>
+        <tr>
+            <td class="green">2:00</td>
+            <td class="pink">5:00</td>
+
+        </tr>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td class="yellow">8:00</td>
+            <td class="green">12:00</td>
+            <td>XSL Formatting Objects</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

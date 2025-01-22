@@ -14,7 +14,7 @@ public class wordFrequency {
         //Count the number of word and it frequency
         for (String word : words) {
 
-            wordcount.put(word.toLowerCase(), wordcount.getOrDefault(word, 0) + 1);
+            wordcount.put(word.toLowerCase(), wordcount.getOrDefault(word.toLowerCase(), 0) + 1);
 
         }
 
