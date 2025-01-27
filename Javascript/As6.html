@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment6</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            text-align: center;
+
+        }
+
+        ul {
+            margin: 20px auto;
+            width: 200px;
+            text-align: left;
+            list-style: none;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment 6</h1>
+
+    <h2> Dynamic List Creation</h2>
+    <button id="addItem">Add Item</button>
+    <ul id="dynamicList">
+        <!-- Space for list Item -->
+    </ul>
+
+
+
+</body>
+<script>
+
+    let addItem = document.getElementById("addItem");
+    let list = document.getElementById("dynamicList");
+    let itemCount = 0;
+    addItem.addEventListener("click", () => {
+        itemCount++;
+
+        let elemet = document.createElement("li");
+        elemet.textContent = "Item " + itemCount;
+
+        list.appendChild(elemet);
+    })
+</script>
+
+</html>

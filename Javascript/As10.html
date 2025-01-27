@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image</title>
+  <style>
+    body {
+      background-color: antiquewhite;
+      text-align: center;
+    }
+
+    #image {
+      width: 300px;
+      height: 200px;
+      margin: 20px 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+
+    #button {
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 1rem;
+      ;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: rgb(113, 113, 225);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Dynamic Image Change</h1>
+  <img id="image" src="image.jpg" alt="Image 1">
+  <br>
+
+  <button id="button">Change Image</button>
+</body>
+
+<script>
+  let image = document.getElementById("image");
+  let button = document.getElementById("button");
+
+  button.addEventListener("click", function () {
+    if (image.src.includes("image.jpg")) {
+      image.src = "image2.jpg";
+      button.textContent = "Red Car";
+    } else {
+      image.src = "image.jpg";
+      button.textContent = "Black Car";
+    }
+  });
+</script>
+
+</html>

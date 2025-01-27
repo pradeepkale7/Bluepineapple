@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulate Element Styles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: antiquewhite;
+        }
+
+        p {
+            font-size: 2rem;
+            color: black;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .blue {
+            background-color: blue;
+            color: white;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Get and Set Element Styles</h1>
+    <p id="text">This is some sample text.</p>
+    <button class="blue" onclick="changeColor('blue')">Make Text Blue</button>
+    <button class="red" onclick="changeColor('red')">Make Text Red</button>
+
+    <script>
+        function changeColor(color) {
+            const text = document.getElementById("text");
+            text.style.color = color;
+        }
+    </script>
+</body>
+
+</html>

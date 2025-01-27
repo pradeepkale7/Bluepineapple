@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment5</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            text-align: center;
+
+        }
+
+        div {
+            font-size: 1.5rem;
+            color: rgb(218, 29, 29);
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment 5</h1>
+
+    <h2> DOM Manipulation - Text Change</h2>
+
+    <div id="content">Hello, World!
+
+    </div>
+    <button id="button">Click me </button>
+
+</body>
+<script>
+    let text = document.getElementById("content");
+    let button = document.getElementById("button");
+    button.addEventListener("click", () => {
+        text.innerHTML = "You clicked the button!"
+    });
+</script>
+
+</html>

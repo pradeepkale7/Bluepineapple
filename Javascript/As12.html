@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        #hidden {
+            display: none;
+            /* Initially hide the modal */
+            background-color: #2785b4;
+            border: 1px solid black;
+            padding: 0.5rem 0.5rem;
+            width: 40%;
+            margin-top: 20px;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
+            border-radius: 15%;
+
+
+        }
+
+        button {
+            color: white;
+            background-color: green;
+            padding: 1rem;
+            border-radius: 1pc;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(71, 176, 71);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="display">Show Modal</button>
+
+    <div id="hidden">
+        <p>This is a hidden Element </p>
+        <button id="closeButton">Close</button>
+    </div>
+
+</body>
+
+<script>
+    let hidden = document.getElementById("hidden");
+    let closeButton = document.getElementById("closeButton");
+    let displayButton = document.getElementById("display");
+
+    displayButton.addEventListener("click", function () {
+        hidden.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function () {
+        hidden.style.display = "none";
+    })
+</script>
+
+</html>
