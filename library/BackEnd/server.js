@@ -43,7 +43,7 @@ app.post('/addBook', async (req, res) => {
     let BookData = await readFile("LibraryData.json");
     let BookList = BookData.books;
 
-    const newId = BookList[BookList.length-1].id +1;
+    const newId = BookList[BookList.length - 1].id + 1;
     newBook.id = newId;
     BookList.push(newBook);
 
@@ -56,10 +56,15 @@ app.delete("/deleteBook", async (req, res) => {
 
     const { id } = req.body;
     const BookData = await readFile("LibraryData.json");
+    const AllocationData = await readFile("Allocation.json")
+
     const BookList = BookData.books.filter(book => book.id != id);
+    const AllocationList = AllocationData.allocation.filter(book => book.bookId != id);
     BookData.books = BookList;
+    AllocationData.allocation = AllocationList;
 
     await writeFile("LibraryData.json", BookData);
+    await writeFile("Allocation.json", AllocationData);
     console.log("Book Deleted ID : ", id);
     res.json({ message: "Book Delted Sucessfully ", id });
 
@@ -79,7 +84,7 @@ app.post("/allocateBook", async (req, res) => {
 
     let BookIndexAllocation = BookList.findIndex(book => book.id === newAllocation.bookId);
 
-    if (BookIndexAllocation === -1) res.jons({ message: "NO such Book Available" });
+    if (BookIndexAllocation === -1) return res.status(400).json({ message: "NO such Book Available" });
     console.log(BookIndexAllocation);
 
     if (BookList[BookIndexAllocation].num_copies < newAllocation.num_copies) {
@@ -98,17 +103,20 @@ app.post("/allocateBook", async (req, res) => {
 
 
 app.post("/deallocateBook", async (req, res) => {
-    const { bookId, quantity } = req.body;
+    const { bookId, quantity, userName } = req.body;
     const BookData = await readFile("LibraryData.json");
     const AllocationData = await readFile("Allocation.json");
 
     const BookList = BookData.books;
     const AllocationList = AllocationData.allocation;
+    console.log(AllocationList);
 
-    let BookIndexAllocation = AllocationList.findIndex(book => book.bookId === bookId);
+    let BookIndexAllocation = AllocationList.findIndex(book => book.bookId === bookId & book.userName === userName);
     let BookIndexBook = BookList.findIndex(book => book.id === bookId);
+    console.log(BookIndexAllocation, BookIndexBook);
+    if (BookIndexAllocation === -1) res.json({ message: "NO such Book Available" });
 
-    if (BookIndexAllocation === -1) res.jons({ message: "NO such Book Available" });
+    console.log(AllocationList[BookIndexAllocation].num_copies);
 
     if (AllocationList[BookIndexAllocation].num_copies < quantity) {
         console.log("failed to Deallocate");

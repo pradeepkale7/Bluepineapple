@@ -3,6 +3,7 @@ import { useState } from "react";
 
 
 
+
 function AddBook() {
 
     const [newBook, setBook] = useState({
@@ -22,6 +23,7 @@ function AddBook() {
         console.log(newBook);
     const data = await response.json();
     alert(data.message); 
+    setBook({ book_name: "", author: "", num_copies: 0 });
     }
 
     const handleChange = (e) => {
@@ -32,9 +34,9 @@ function AddBook() {
         <>
             <h2>Add a New Book</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="book_name" onChange={handleChange} placeholder="Name of the Book" required />
-                <input type="text" name="author" onChange={handleChange} placeholder="Author" required />
-                <input type="number" name="num_copies" onChange={handleChange} placeholder="No Of copies" required />
+                <input type="text" name="book_name" value={newBook.book_name} onChange={handleChange} placeholder="Name of the Book" required />
+                <input type="text" name="author" value={newBook.author}  onChange={handleChange} placeholder="Author" required />
+                <input type="number" name="num_copies" value={newBook.num_copies} onChange={handleChange} placeholder="No Of copies" min="0" required />
                 <button type="submit">Add Book</button>
             </form>
         </>

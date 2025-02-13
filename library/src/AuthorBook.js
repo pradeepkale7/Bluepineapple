@@ -35,7 +35,7 @@ function AuthorBook() {
       name="text"
       type="text"
       value={authorName}
-      placeholder="Explore the cosmos..."
+      placeholder="Enter the Author Name"
       onChange={(e) => setAuthName(e.target.value)}
     />
     <div id="input-mask"></div>

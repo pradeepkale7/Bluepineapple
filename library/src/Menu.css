@@ -7,6 +7,14 @@ body{
     text-align: center;
 }
 
+.innerConatiner > * { 
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    flex-direction: column; 
+    
+  }
+
 .flex-container {
     display: flex;
     justify-content: center; 

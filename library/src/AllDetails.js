@@ -39,7 +39,7 @@ function AllDetails() {
             <tbody>
               {books.map((book) => {
                 // Find allocations for the current book
-                const bookAllocations = allocations.filter(a => a.bookId === book.id);
+                const bookAllocations = allocations.filter(a => a.bookId === book.id && a.num_copies > 0);
 
                 return (
                   <tr key={book.id}>
@@ -52,7 +52,7 @@ function AllDetails() {
                         <ul>
                           {bookAllocations.map((alloc) => (
                             <li key={alloc.userId}>
-                              {alloc.userName} ({alloc.num_copies} copies)
+                              User ID: {alloc.userId} - {alloc.userName} ({alloc.num_copies} copies)
                             </li>
                           ))}
                         </ul>

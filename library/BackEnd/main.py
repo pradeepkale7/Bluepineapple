@@ -97,6 +97,7 @@ async def deallocateBook(request: Request):
     data = await request.json()
     bookId = data.get("bookId")
     quantity = data.get("quantity")
+    userName = data.get("userName")
 
     book_data = load_books()
     allocate_book = load_Allocation()
@@ -105,7 +106,7 @@ async def deallocateBook(request: Request):
     allocation = allocate_book["allocation"]
 
     for book in allocation:
-        if book["bookId"] == bookId and book["num_copies"] >= quantity:
+        if book["bookId"] == bookId and book["num_copies"] >= quantity and book["userName"]==userName:
             book["num_copies"] -= quantity
             break
 

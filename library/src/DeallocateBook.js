@@ -5,7 +5,7 @@ import AllDetails from "./AllDetails";
 function Deallocate() {
 
     const [bookId, setBookId] = useState("")
-    const [quantity, setQuantity] = useState("")
+    const [userName, setUserName] = useState("")
     const [refereshTrigger, setTrigger] = useState(false)
 
     const handleAllocation = async () => {
@@ -17,7 +17,8 @@ function Deallocate() {
             },
             body: JSON.stringify({
                 bookId: parseInt(bookId),
-                quantity: parseInt(quantity)
+                quantity: parseInt(1),
+                userName:userName
             })
         });
 
@@ -29,13 +30,16 @@ function Deallocate() {
 
     return (
         <>
-            <AllDetails refereshTrigger={refereshTrigger}/> 
+             <AllDetails refereshTrigger={refereshTrigger}/> 
+        
+           <div>
             <br></br>
             <label>Enter the Id of the book </label><br />
             <input type="number" value={bookId} onChange={(e) => setBookId(e.target.value)} /> <br />
-            <label>Enter Quantity </label><br></br>
-            <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} /><br></br>
+            <label>Enter User Name </label><br></br>
+            <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} /><br></br>
             <button onClick={handleAllocation}>Deallocate</button>
+            </div>
         </>
     );
 
