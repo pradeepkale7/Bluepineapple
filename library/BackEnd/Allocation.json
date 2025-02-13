@@ -1,0 +1,89 @@
+{
+    "allocation": [
+      {
+        "userId": 1,
+        "bookId": 1,
+        "userName": "Pradeep",
+        "num_copies": 2
+      },
+      {
+        "userId": 2,
+        "bookId": 1,
+        "userName": "Satish",
+        "num_copies": 1
+      },
+      {
+        "userId": 3,
+        "bookId": 2,
+        "userName": "Chetan",
+        "num_copies": 3
+      },
+      {
+        "userId": 4,
+        "bookId": 2,
+        "userName": "Avadhoot",
+        "num_copies": 2
+      },
+      {
+        "userId": 5,
+        "bookId": 3,
+        "userName": "Rohit",
+        "num_copies": 1
+      },
+      {
+        "userId": 6,
+        "bookId": 4,
+        "userName": "Amit",
+        "num_copies": 2
+      },
+      {
+        "userId": 7,
+        "bookId": 4,
+        "userName": "Neha",
+        "num_copies": 1
+      },
+      {
+        "userId": 8,
+        "bookId": 5,
+        "userName": "Disha",
+        "num_copies": 2
+      },
+      {
+        "userId": 9,
+        "bookId": 6,
+        "userName": "Dipali",
+        "num_copies": 3
+      },
+      {
+        "userId": 10,
+        "bookId": 7,
+        "userName": "Vikas",
+        "num_copies": 1
+      },
+      {
+        "userId": 11,
+        "bookId": 8,
+        "userName": "Ramesh",
+        "num_copies": 1
+      },
+      {
+        "userId": 12,
+        "bookId": 9,
+        "userName": "Sneha",
+        "num_copies": 2
+      },
+      {
+        "userId": 13,
+        "bookId": 10,
+        "userName": "Prathamesh",
+        "num_copies": 2
+      },
+      {
+        "userId": 14,
+        "bookId": 1,
+        "userName": "Anjali",
+        "num_copies": 1
+      }
+    ]
+  }
+  
