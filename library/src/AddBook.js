@@ -1,9 +1,6 @@
 
 import { useState } from "react";
 
-
-
-
 function AddBook() {
 
     const [newBook, setBook] = useState({

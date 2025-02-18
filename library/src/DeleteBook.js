@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState ,useEffect} from "react";
 
 function DeleteBook() {
     const [books, setData] = useState([]);
-    
+
     const handleDelete = async (id) => {
         const response = await fetch("http://localhost:8000/deleteBook", {
             method: "DELETE",
@@ -18,10 +18,11 @@ function DeleteBook() {
 
     useEffect(() => {
         fetch("http://localhost:8000/getdata")
-          .then(response => response.json())
-          .then(data => setData(data.books));
-    
-      }, []);
+            .then(response => response.json())
+            .then(data => setData(data.books));
+
+    }, []);
+
 
     return (
         <>

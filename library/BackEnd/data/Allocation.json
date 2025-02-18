@@ -1,0 +1,28 @@
+{
+    "allocation": [
+        {
+            "userId": 1,
+            "bookId": 1,
+            "userName": "Pradeep",
+            "num_copies": 2
+        },
+        {
+            "userId": 2,
+            "bookId": 1,
+            "userName": "Satish",
+            "num_copies": 1
+        },
+        {
+            "userId": 3,
+            "bookId": 2,
+            "userName": "Chetan",
+            "num_copies": 3
+        },
+        {
+            "bookId": 15,
+            "userName": "Me",
+            "num_copies": 0,
+            "userId": 4
+        }
+    ]
+}
