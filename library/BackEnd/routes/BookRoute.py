@@ -4,11 +4,11 @@ from models.BookModel import load_books,write_books,Book
 router=APIRouter()
 
 
-@router.get("/getdata")
+@router.get("/books")
 def get_Books():
     return load_books()
 
-@router.post("/addBook")
+@router.post("/books")
 def add_book(book: Book):
     data = load_books()
 
@@ -27,7 +27,7 @@ def add_book(book: Book):
 
 
 
-@router.delete("/deleteBook")
+@router.delete("/books")
 async def deleteBook(request: Request):
     data = await request.json()
     bookid = data.get("id")

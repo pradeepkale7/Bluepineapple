@@ -4,7 +4,7 @@ function DeleteBook() {
     const [books, setData] = useState([]);
 
     const handleDelete = async (id) => {
-        const response = await fetch("http://localhost:8000/deleteBook", {
+        const response = await fetch("http://localhost:8000/books", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id }),
@@ -17,7 +17,7 @@ function DeleteBook() {
     };
 
     useEffect(() => {
-        fetch("http://localhost:8000/getdata")
+        fetch("http://localhost:8000/books")
             .then(response => response.json())
             .then(data => setData(data.books));
 

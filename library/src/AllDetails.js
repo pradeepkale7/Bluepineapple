@@ -6,14 +6,14 @@ function AllDetails() {
 
   // Fetch books
   useEffect(() => {
-    fetch("http://localhost:8000/getdata")
+    fetch("http://localhost:8000/books")
       .then(response => response.json())
       .then(data => setBooks(data.books));
   }, []);
 
   // Fetch allocations
   useEffect(() => {
-    fetch("http://localhost:8000/getAllocationData")
+    fetch("http://localhost:8000/library")
       .then(response => response.json())
       .then(data => setAllocations(data.allocation));
   }, []);

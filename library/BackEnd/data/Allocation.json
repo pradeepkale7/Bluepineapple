@@ -16,13 +16,47 @@
             "userId": 3,
             "bookId": 2,
             "userName": "Chetan",
-            "num_copies": 3
+            "num_copies": 0
         },
         {
             "bookId": 15,
             "userName": "Me",
             "num_copies": 0,
             "userId": 4
+        },
+        {
+            "bookId": 1,
+            "userName": "Pradeep",
+            "num_copies": 1,
+            "userId": 5
+        },
+        {
+            "bookId": 1,
+            "userId": 101,
+            "num_copies": 1,
+            "allocate_Date": "2025-02-18",
+            "return_Date": "2025-03-01"
+        },
+        {
+            "bookId": 1,
+            "userId": 101,
+            "num_copies": 1,
+            "allocate_Date": "2025-02-18",
+            "return_Date": "2025-03-01"
+        },
+        {
+            "bookId": 1,
+            "userId": 101,
+            "num_copies": 1,
+            "allocate_Date": "2025-02-18",
+            "return_Date": "2025-03-01"
+        },
+        {
+            "bookId": 15,
+            "userId": 1,
+            "num_copies": 0,
+            "issue_Date": "2025-02-18",
+            "return_Date": "2025-02-19"
         }
     ]
 }

@@ -7,7 +7,7 @@ function AuthorBook() {
     const [authorName, setAuthName] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:8000/getdata")
+        fetch("http://localhost:8000/books")
             .then(response => response.json())
             .then(data => setbooks(data.books));
     }, [])
