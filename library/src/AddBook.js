@@ -1,12 +1,10 @@
 
 import { useState } from "react";
 
-
-
-
 function AddBook() {
 
     const [newBook, setBook] = useState({
+        id:0,
         book_name: "",
         author: "",
         num_copies: 0
@@ -14,7 +12,7 @@ function AddBook() {
 
     const handleSubmit =async (e) => {
         e.preventDefault();
-        const response = await  fetch("http://localhost:8000/addBook", {
+        const response = await  fetch("http://localhost:8000/books", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newBook),

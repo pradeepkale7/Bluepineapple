@@ -5,9 +5,9 @@ function AllUsers() {
 
     const [userList, setUserList] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:8000/getAllocationData")
+        fetch("http://localhost:8000/Users")
             .then(response => response.json())
-            .then(data => setUserList(data.allocation));
+            .then(data => setUserList(data.users));
     }, [])
     console.log(userList)
 
@@ -16,7 +16,7 @@ function AllUsers() {
         <h1>List of Users</h1>
         
             <ol>
-                {userList.map(user => (<li key={user.userId}>{user.userName} </li>))}
+                {userList.map(user => (<li key={user.userId}> User ID:{user.userId} - {user.userName} </li>))}
             </ol>
         </>
     );

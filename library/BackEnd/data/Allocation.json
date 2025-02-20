@@ -1,0 +1,60 @@
+{
+  "allocation": [
+    {
+      "bookId": 1,
+      "userId": 101,
+      "num_copies": 1,
+      "allocate_Date": "2025-02-18",
+      "return_Date": "2025-03-01"
+    },
+    {
+      "bookId": 1,
+      "userId": 101,
+      "num_copies": 1,
+      "allocate_Date": "2025-02-18",
+      "return_Date": "2025-03-01"
+    },
+    {
+      "bookId": 1,
+      "userId": 101,
+      "num_copies": 1,
+      "allocate_Date": "2025-02-18",
+      "return_Date": "2025-03-01"
+    },
+    {
+      "bookId": 15,
+      "userId": 1,
+      "num_copies": 0,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-21"
+    },
+    {
+      "bookId": 15,
+      "userId": 101,
+      "num_copies": 1,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-20"
+    },
+    {
+      "bookId": 15,
+      "userId": 102,
+      "num_copies": 1,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-20"
+    },
+    {
+      "bookId": 15,
+      "userId": 1,
+      "num_copies": 1,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-20"
+    },
+    {
+      "bookId": 15,
+      "userId": 2,
+      "num_copies": 1,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-20"
+    }
+  ]
+}

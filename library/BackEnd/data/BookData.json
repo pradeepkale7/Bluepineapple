@@ -4,13 +4,13 @@
       "id": 1,
       "book_name": "Atomic Habits",
       "author": "James Clear",
-      "num_copies": 50
+      "num_copies": 44
     },
     {
       "id": 2,
       "book_name": "The 7 Habits of Highly Effective People",
       "author": "Stephen R. Covey",
-      "num_copies": 40
+      "num_copies": 43
     },
     {
       "id": 3,
@@ -57,8 +57,8 @@
     {
       "id": 10,
       "book_name": "Daring Greatly",
-      "author": "Brené Brown",
-      "num_copies": 20
+      "author": "BrenÃƒÂ© Brown",
+      "num_copies": 19
     },
     {
       "id": 11,
@@ -86,15 +86,9 @@
     },
     {
       "id": 15,
-      "book_name": "Mindset: The New Psychology of Success",
-      "author": "Carol S. Dweck",
-      "num_copies": 31
-    },
-    {
       "book_name": "Goblet of Fire",
       "author": "Pradeep",
-      "num_copies": 2,
-      "id": 16
+      "num_copies": 34
     }
   ]
 }
