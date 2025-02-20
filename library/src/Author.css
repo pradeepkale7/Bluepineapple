@@ -320,6 +320,7 @@
   }
 
   table {
+    background-color: #E9EDC9;
     width: 80%;
     border-collapse: collapse;
     margin: 20px 0;
@@ -327,17 +328,17 @@
     text-align: left;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px px rgba(0, 0, 0, 0.1);
   }
   
   th, td {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid black;
   }
   
   th {
-    background-color: #007bff;
-    color: white;
+    background-color: #D4A373;
+    color: black;
     font-weight: bold;
   }
   
@@ -346,28 +347,28 @@
   }
   
   tr:hover {
-    background-color: #ddd;
+    background-color: #FAEDCD;
   }
 
   
   input {
     width: 40%;
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid #ffffff;
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease-in-out;
   }
   
   input:focus {
-    border-color: #007bff;
+    border-color: #737474;
     outline: none;
-    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0px 0px 5px rgba(57, 62, 67, 0.5);
   }
   
 
   button {
-    background-color: #007bff;
+    background-color: #D4A373;
     color: white;
     padding: 12px 20px;
     font-size: 16px;
@@ -378,7 +379,7 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: rgb(190, 38, 38);
     transform: scale(1.05);
   }
   
@@ -399,7 +400,7 @@
   }
   
   ul li {
-    background: #f8f9fa;
+    background: #FEFAE0;
     padding: 10px 15px;
     margin: 5px 0;
     border-radius: 5px;
@@ -408,7 +409,7 @@
   }
   
   ul li:hover {
-    background: #007bff;
+    background: #D4A373;
     color: white;
   }
 
@@ -422,14 +423,14 @@
     width: 40%;
     margin: 5px 0;
     padding: 10px;
-    border-left: 4px solid #007bff;
-    background: #f8f9fa;
+    border-left: 4px solid #D4A373;
+    background: #FEFAE0;
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
   }
   
   ol li:hover {
-    background: #007bff;
+    background: #D4A373;
     color: white;
   }
   

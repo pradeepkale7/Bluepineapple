@@ -11,6 +11,8 @@ function AllocateBook() {
     const [refereshTrigger, setTrigger] = useState(false);
     const [returnDate, setReturnDate] = useState("");
     const [issueDate,setIssueDate]=useState("");
+    const today= new Date();
+    const minDate = `${today.getFullYear()}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`;
 
     useEffect(()=>{
 
@@ -70,9 +72,9 @@ try{
                 <label >BookID</label><br></br>
                 <input type="number" value={selectedBook} onChange={e => setSelectedBook(e.target.value)} min={0}/><br></br>
                 <label>Issue Date</label>
-                <input onChange={e => setIssueDate(e.target.value)} value={issueDate} type="date" />
+                <input onChange={e => setIssueDate(e.target.value)} value={issueDate} type="date" min={minDate}/>
                 <label>Return Date</label><br></br>
-                <input onChange={e => setReturnDate(e.target.value)} value={returnDate} type="date" />
+                <input onChange={e => setReturnDate(e.target.value)} value={returnDate} type="date" min={minDate} />
                 <button onClick={handleAllocation}>Submit</button>
             </div>
         </>
