@@ -2,7 +2,7 @@ from datetime import date
 from  fastapi import APIRouter, HTTPException, Request
 from models.BookModel import load_books,write_books
 from models.LibraryModel import BookAllocation ,load_Allocation,update_allocation
-
+from models.UserModel import load_Users
 
 
 router=APIRouter()
@@ -16,14 +16,20 @@ async def allocate_book(allocation:BookAllocation):
     print(allocation)
     books_data = load_books()
     allocation_data = load_Allocation()
+    user_data=load_Users()
 
     books = books_data["books"]
     allocations = allocation_data["allocation"]
+    users= user_data["users"]
     
     book = next((b for b in books if b["id"]==allocation.bookId),None)
+    user= next((u for u in users if u["userId"]==allocation.userId),None)
+    
+    if not user :
+        return {"message": "NO such user found Enter Correct User ID"}
 
     if not book or book["num_copies"] < allocation.num_copies:
-        raise HTTPException(status_code=400,details="Not enough copies available")
+        return {"message": "Not enough copies available"}
 
     book["num_copies"] -= allocation.num_copies
     

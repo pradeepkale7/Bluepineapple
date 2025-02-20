@@ -35,8 +35,6 @@ function AllocateBook() {
             issue_Date:issueDate,
             return_Date: returnDate,
         }
-
-        console.log(requestData);
 try{
         const response = await fetch("http://localhost:8000/allocateBook", {
             method: "POST",
@@ -75,7 +73,6 @@ try{
                 <input onChange={e => setIssueDate(e.target.value)} value={issueDate} type="date" />
                 <label>Return Date</label><br></br>
                 <input onChange={e => setReturnDate(e.target.value)} value={returnDate} type="date" />
-                {console.log(returnDate)}
                 <button onClick={handleAllocation}>Submit</button>
             </div>
         </>

@@ -15,7 +15,7 @@ def add_book(book: Book):
     books = data["books"]
 
     newId = books[-1]["id"] + 1 if books else 1
-    newBook = book.dict()
+    newBook = book.model_dump()
     newBook["id"] = newId
 
     books.append(newBook)
