@@ -10,13 +10,11 @@
         },
         {
             "userId": 3,
-            "bookId": 2,
             "userName": "Chetan"
         },
         {
-            "bookId": 15,
-            "userName": "Me",
-            "userId": 4
+            "userId": 4,
+            "userName": "Rohit"
         }
     ]
 }

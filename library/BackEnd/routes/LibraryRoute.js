@@ -1,17 +1,38 @@
+
+/**
+ * Library Route
+ * Handles routing for library-related operations.
+ */
+
+
 const express = require("express")
 const router = express.Router();
+const { readFile, writeFile } = require("../models/FileModel");
 
-const { readFile, writeFile } = require("../models/BookModel");
-const { route } = require("./BookRoute");
+
+/**
+ * GET /library
+ * Allocate a book to a user.
+ * @route GET /library
+ * @returns {Object} List of all Books and allocation
+ */
 
 router.get("/library", async (req, res) => {
     res.json(await readFile("data/Allocation.json"));
 })
 
-
+/**
+ * POST /allocateBook
+ * Allocate a book to a user.
+ * @route POST /allocateBook
+ * @param {number} bookId - ID of the book to allocate.
+ * @param {number} userId - ID of the user.
+ * @param {string} issue_Date - Issue date for the book.
+ * @param {string} return_Date - Return date for the book
+ * @returns {Object} Success or error message.
+ */
 router.post("/allocateBook", async (req, res) => {
     try {
-
         const newAllocation = req.body;
 
         const BookData = await readFile("data/BookData.json");
@@ -21,12 +42,9 @@ router.post("/allocateBook", async (req, res) => {
         const BookList = BookData.books;
         const AllocationList = AllocationData.allocation;
         const UserList = UserData.users;
-        console.log(UserList)
 
         let BookIndexAllocation = BookList.findIndex(book => book.id === newAllocation.bookId);
         let UserIndex = UserList.findIndex(User =>User.userId === newAllocation.userId);
-        console.log(UserIndex)
-
 
         if (BookIndexAllocation === -1) {
             return res.status(404).json({ message: "Book not found" });
@@ -52,12 +70,18 @@ router.post("/allocateBook", async (req, res) => {
 })
 
 
+/**
+ * POST /deallocateBook
+ * Deallocate a book from a user.
+ * @route POST /deallocateBook
+ * @param {number} bookId - ID of the book to allocate.
+ * @param {number} userId - ID of the user.
+ * @returns {Object} Success or error message.
+ */
+
 router.post("/deallocateBook", async (req, res) => {
     try {
         const { bookId, quantity, userId } = req.body;
-        if (!bookId || !quantity || !userId) {
-            return res.status(400).json({ message: "Missing required fileds" })
-        }
 
         const BookData = await readFile("data/BookData.json");
         const AllocationData = await readFile("data/Allocation.json");
@@ -81,10 +105,8 @@ router.post("/deallocateBook", async (req, res) => {
 
         res.json({ message: "Book has been deallocated" });
     } catch (err) {
-        return res.status(err.status || 500).json({ message: error.message });
+        return res.status(err.status || 500).json({ message: err.message });
     }
 })
-
-
 
 module.exports = router

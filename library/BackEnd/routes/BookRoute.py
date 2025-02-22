@@ -1,9 +1,22 @@
-from fastapi import APIRouter, Request 
-from models.BookModel import load_books,write_books,Book
+
+"""
+Book Route 
+Handles routing for book related operations
+"""
+
+from fastapi import APIRouter, Request
+from models.BookModel import Book
+from models.BookModel import load_books,write_books
 
 router=APIRouter()
 
 
+"""
+Fetches books details 
+
+Returns:
+    dict:Book data
+"""
 @router.get("/books")
 def get_Books():
     return load_books()
@@ -28,15 +41,15 @@ def add_book(book: Book):
 
 
 @router.delete("/books")
-async def deleteBook(request: Request):
+async def delete_Book(request: Request):
     data = await request.json()
     bookid = data.get("id")
 
-    books_data = load_books()
-    books = books_data["books"]
+    booksData = load_books()
+    books = booksData["books"]
 
     for i, book in enumerate(books):
         if book["id"] == bookid:
             deleteBook = books.pop(i)
-            write_books(books_data)
+            write_books(booksData)
             return {"message": "Book delted suicessfully", "deltedbook": deleteBook}

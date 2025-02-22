@@ -1,9 +1,9 @@
 
 const express = require("express");
-const router=express.Router();
+const router = express.Router();
 const fs = require("fs");
 
-const {readFile,writeFile}=require("../models/BookModel")
+const { readFile, writeFile } = require("../models/FileModel")
 
 
 router.get("/books", async (req, res) => {
@@ -42,6 +42,11 @@ router.delete("/books", async (req, res) => {
         const BookList = BookData.books.filter(book => book.id != id);
         const AllocationList = AllocationData.allocation.filter(book => book.bookId != id);
 
+        let BookIndexAllocation = AllocationData.allocation.findIndex(book => book.bookId === id);
+        if (BookIndexAllocation != -1) {
+            return res.status(404).json({ message: "This book is allocated to a user" });
+        }
+
         if (BookList.length === BookData.books.length) {
             return res.status(404).json({ message: "Book not found" });
         }
@@ -59,4 +64,4 @@ router.delete("/books", async (req, res) => {
 });
 
 
-module.exports=router;
+module.exports = router;

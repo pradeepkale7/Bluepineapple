@@ -1,6 +1,12 @@
 
 const fs = require("fs")
 
+/**
+ * Read a JSON File  content.
+ * @param {string} file - File name .
+ * @returns {Object} file data
+ */
+
 exports.readFile = (file) => {
     return new Promise((resolve, reject) => {
         fs.readFile(file, "utf-8", (err, data) => {
@@ -14,6 +20,12 @@ exports.readFile = (file) => {
 }
 
 
+/**
+ * Write in  a JSON File .
+ * @param {string} file - File name .
+ * @param {string} data - File content .
+ * @returns {Object} message
+ */
 
 exports.writeFile = (file, data) => {
     return new Promise((resolve, reject) => {
