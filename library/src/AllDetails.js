@@ -52,7 +52,7 @@ function AllDetails() {
                         <ul>
                           {bookAllocations.map((alloc) => (
                             <li key={alloc.userId}>
-                              User ID: {alloc.userId} - From {alloc.allocate_Date} to {alloc.return_Date}  ({alloc.num_copies} copies)
+                              User ID: {alloc.userId} - From {alloc.issue_Date} to {alloc.return_Date}  ({alloc.num_copies} copies)
                             </li>
                           ))}
                         </ul>

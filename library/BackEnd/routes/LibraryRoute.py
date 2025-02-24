@@ -1,3 +1,8 @@
+
+"""
+Library Route
+Handles routing for Library realted operations.
+"""
 from datetime import date
 from  fastapi import APIRouter, HTTPException, Request
 from models.BookModel import load_books,write_books
@@ -7,13 +12,29 @@ from models.UserModel import load_Users
 
 router=APIRouter()
 
+"""
+Fetch Allocation details form JSON file
+
+Returns:
+    dict:Allocation data
+"""
+
 @router.get("/library")
 def get_books():
     return load_Allocation()
 
+"""
+Allocate a book to a User
+
+Args:
+    allocation:BookAllocation - Book allocation details
+    
+Returns:
+    dict:Sucess message
+"""
+
 @router.post("/allocateBook")
-async def allocate_book(allocation:BookAllocation):
-    print(allocation)
+async def allocateBook(allocation:BookAllocation):
     books_data = load_books()
     allocation_data = load_Allocation()
     user_data=load_Users()
@@ -40,6 +61,16 @@ async def allocate_book(allocation:BookAllocation):
     return {"message": "Book allocated successfully"}
 
 
+"""
+Deallocate a book from a User
+
+Args:
+    request:Request - Book deallocatoin details(bookId,quantity,userId)
+    
+Returns:
+    dict:Sucess message
+"""
+
 @router.post("/deallocateBook")
 async def deallocateBook(request: Request):
     data = await request.json()
@@ -47,22 +78,19 @@ async def deallocateBook(request: Request):
     quantity = data.get("quantity")
     userId = data.get("userId")
     
-    if not bookId or not quantity or not userId:
-        raise HTTPException(status_code=400, detail="Missing required fields")
+    bookData = load_books()
+    allocateBook = load_Allocation()
 
-    book_data = load_books()
-    allocate_book = load_Allocation()
-
-    books = book_data["books"]
-    allocation = allocate_book["allocation"]
+    books = bookData["books"]
+    allocation = allocateBook["allocation"]
 
     allocated = next((book for book in allocation if book["bookId"] == bookId and book["userId"] == userId), None)
 
     if not allocated:
-        raise HTTPException(status_code=404, detail="Allocation not found for the specified book and user")
+        return {"message": "Allocation not found for the specified book and user"}
 
     if allocated["num_copies"] < quantity:
-        raise HTTPException(status_code=400, detail="Not enough copies allocated")
+        return {"message": "Not enough copies allocated"}
 
     allocated["num_copies"] -= quantity
     
@@ -71,6 +99,6 @@ async def deallocateBook(request: Request):
             book["num_copies"] += quantity
             break
 
-    write_books(book_data)
-    update_allocation(allocate_book)
+    write_books(bookData)
+    update_allocation(allocateBook)
     return {"message": "Book deallocated sucessfully"}

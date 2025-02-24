@@ -16,7 +16,7 @@
       "id": 3,
       "book_name": "How to Win Friends and Influence People",
       "author": "Dale Carnegie",
-      "num_copies": 35
+      "num_copies": 34
     },
     {
       "id": 4,
@@ -40,55 +40,7 @@
       "id": 7,
       "book_name": "Can't Hurt Me",
       "author": "David Goggins",
-      "num_copies": 25
-    },
-    {
-      "id": 8,
-      "book_name": "The Miracle Morning",
-      "author": "Hal Elrod",
-      "num_copies": 28
-    },
-    {
-      "id": 9,
-      "book_name": "The Four Agreements",
-      "author": "Don Miguel Ruiz",
-      "num_copies": 32
-    },
-    {
-      "id": 10,
-      "book_name": "Daring Greatly",
-      "author": "BrenÃƒÂ© Brown",
-      "num_copies": 19
-    },
-    {
-      "id": 11,
-      "book_name": "You Are a Badass",
-      "author": "Jen Sincero",
-      "num_copies": 27
-    },
-    {
-      "id": 12,
-      "book_name": "Awaken the Giant Within",
-      "author": "Tony Robbins",
-      "num_copies": 22
-    },
-    {
-      "id": 13,
-      "book_name": "The 5 AM Club",
-      "author": "Robin Sharma",
-      "num_copies": 38
-    },
-    {
-      "id": 14,
-      "book_name": "Deep Work",
-      "author": "Cal Newport",
-      "num_copies": 29
-    },
-    {
-      "id": 15,
-      "book_name": "Goblet of Fire",
-      "author": "Pradeep",
-      "num_copies": 34
+      "num_copies": 24
     }
   ]
 }

@@ -32,9 +32,9 @@ function AddBook() {
         <>
             <h2>Add a New Book</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="book_name" value={newBook.book_name} onChange={handleChange} placeholder="Name of the Book" required />
-                <input type="text" name="author" value={newBook.author}  onChange={handleChange} placeholder="Author" required />
-                <input type="number" name="num_copies" value={newBook.num_copies} onChange={handleChange} placeholder="No Of copies" min="0" required />
+                <input type="text" name="book_name" value={newBook.book_name} onChange={handleChange} placeholder="Name of the Book" required /><br />
+                <input type="text" name="author" value={newBook.author}  onChange={handleChange} placeholder="Author" required /><br />
+                <input type="number" name="num_copies" value={newBook.num_copies} onChange={handleChange} placeholder="No Of copies" min="0" required /><br />
                 <button type="submit">Add Book</button>
             </form>
         </>
