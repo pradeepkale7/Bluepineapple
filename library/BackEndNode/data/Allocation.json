@@ -1,0 +1,25 @@
+{
+  "allocation": [
+    {
+      "bookId": 1,
+      "userId": 101,
+      "num_copies": 1,
+      "issue_Date": "2025-02-18",
+      "return_Date": "2025-03-01"
+    },
+    {
+      "bookId": 1,
+      "userId": 1,
+      "num_copies": 1,
+      "issue_Date": "2025-02-20",
+      "return_Date": "2025-02-20"
+    },
+    {
+      "bookId": 7,
+      "userId": 1,
+      "num_copies": 1,
+      "issue_Date": "2025-02-21",
+      "return_Date": "2025-02-21"
+    }
+  ]
+}
