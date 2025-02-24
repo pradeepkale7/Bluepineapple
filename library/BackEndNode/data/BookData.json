@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "book_name": "Atomic Habits",
+      "author": "James Clear",
+      "num_copies": 44
+    },
+    {
+      "id": 2,
+      "book_name": "The 7 Habits of Highly Effective People",
+      "author": "Stephen R. Covey",
+      "num_copies": 43
+    },
+    {
+      "id": 3,
+      "book_name": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "num_copies": 34
+    },
+    {
+      "id": 4,
+      "book_name": "The Power of Now",
+      "author": "Eckhart Tolle",
+      "num_copies": 30
+    },
+    {
+      "id": 5,
+      "book_name": "Think and Grow Rich",
+      "author": "Napoleon Hill",
+      "num_copies": 45
+    },
+    {
+      "id": 6,
+      "book_name": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "num_copies": 50
+    },
+    {
+      "id": 7,
+      "book_name": "Can't Hurt Me",
+      "author": "David Goggins",
+      "num_copies": 24
+    }
+  ]
+}
